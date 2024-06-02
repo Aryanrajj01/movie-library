@@ -5,7 +5,7 @@ exports.connectMongoose = () => {
 
 
      
-    mongoose.connect('mongodb://0.0.0.0:27017/store')
+    mongoose.connect('mongodb+srv://ayushpal5432:2Ep3VZ*x*vMag2z@cluster0.fiemtf7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
      .then(e=>console.log("Mongodb Connected"))
      .catch(e=>console.log(`${e} error`));
 
