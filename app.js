@@ -62,6 +62,6 @@ app.get('/',(req,res)=>{
   
 });
 
-app.listen(4000,()=>{
-    console.log("Server Started At port 4000");
+app.listen(3000,()=>{
+    console.log("Server Started At port 3000");
 })

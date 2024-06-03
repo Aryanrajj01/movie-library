@@ -69,3 +69,25 @@ nav {
     font-size: 14px;
     color: #666;
 }
+
+
+
+
+
+
+.delete-from-lib {
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .delete-from-lib:hover {
+    background-color: darkred;
+  }
+  

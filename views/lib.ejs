@@ -28,6 +28,7 @@
                         <h3><%= movie.title %></h3>
                         <p>Year: <%= movie.year %></p>
                         <p>Type: <%= movie.type %></p>
+                        <button class="delete-from-lib" onclick="deleteFromLibrary('<%= movie._id %>', this)">Delete</button>
                     </div>
                 </div>
             <% }); %>
@@ -36,7 +37,7 @@
     <script>
         function updatePrivacy() {
             const isChecked = document.getElementById('list-toggle').checked;
-            fetch('/updatePrivacy', {
+            fetch('/user/updatePrivacy', { // Ensure the route prefix matches your setup
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -53,9 +54,34 @@
                 console.error('Error updating privacy:', error);
             });
         }
-    
+
+        function deleteFromLibrary(movieId, button) {
+            fetch('/deleteFromLib', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ movieId: movieId })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response error ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Movie deleted from library:', data);
+                // Remove the movie div from the DOM
+                const movieDiv = button.closest('.movie');
+                movieDiv.remove();
+            })
+            .catch(error => {
+                console.error('Error deleting movie:', error);
+            });
+        }
+
         window.addEventListener('load', () => {
-            fetch('/getPrivacy')
+            fetch('/user/getPrivacy') // Ensure the route prefix matches your setup
             .then(response => response.json())
             .then(data => {
                 const isPrivate = data.isPrivate;
@@ -66,6 +92,5 @@
             });
         });
     </script>
-    
 </body>
 </html>
