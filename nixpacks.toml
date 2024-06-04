@@ -1,0 +1,9 @@
+[phases.setup]
+runtime = "nodejs_18"
+package_manager = "npm"
+
+[phases.install]
+cmd = "npm install"
+
+[phases.start]
+cmd = "node app.js"
