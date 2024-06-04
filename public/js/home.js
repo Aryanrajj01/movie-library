@@ -4,7 +4,7 @@ const userId = document.querySelector('#userId').value;
 
 input.addEventListener('input', () => {
   if (input.value.trim() !== "") {
-    fetch(`https://www.omdbapi.com/?apikey=6f97ed96&s=${input.value}`)
+    fetch(`https://www.omdbapi.com/?apikey=cf02be50&s=${input.value}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response error ' + response.statusText);

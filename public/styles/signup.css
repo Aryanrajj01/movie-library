@@ -3,6 +3,7 @@ body{
     padding: 0;
     font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
+    background-color: rgb(210, 216, 126);
 }
 
 .outer {
@@ -21,12 +22,13 @@ body{
     background-color: rgba(255, 255, 255, 0.9);
     width: 300px;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     z-index: 1000;
     opacity: 1;
+    background-color: #6ba5e3;
 }
 
 .main:hover {
@@ -187,7 +189,7 @@ footer{
 
 }
 
-.styled-butto{
+.styled-button{
     color: white;
 }
 

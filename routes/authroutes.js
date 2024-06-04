@@ -47,11 +47,6 @@ router.post('/signup',async(req,res)=>{
 
         return res.render('signin');
     }
-
-    
-
-
-
 })
 
 module.exports = router;

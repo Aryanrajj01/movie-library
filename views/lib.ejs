@@ -9,15 +9,12 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="/assests/logoBg.png" alt="Logo">
+            <img src="https://media.istockphoto.com/id/1835372684/photo/speech-bubble-with-play-icon.jpg?s=1024x1024&w=is&k=20&c=PXrq4GZrl047IklVOcwnzgXZyORN8H9sC84WX6YQ0Y8=" alt="Logo">
         </div>
         <div class="title">
-            Your Library
+            Your Favourite List
         </div>
-        <div class="toggle">
-            <label for="list-toggle">Private List:</label>
-            <input type="checkbox" id="list-toggle" onchange="updatePrivacy()">
-        </div>
+       
     </nav>
     <div class="main">
         <div class="movie-container">
@@ -37,7 +34,7 @@
     <script>
         function updatePrivacy() {
             const isChecked = document.getElementById('list-toggle').checked;
-            fetch('/user/updatePrivacy', { // Ensure the route prefix matches your setup
+            fetch('/user/updatePrivacy', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -81,7 +78,7 @@
         }
 
         window.addEventListener('load', () => {
-            fetch('/user/getPrivacy') // Ensure the route prefix matches your setup
+            fetch('/user/getPrivacy') 
             .then(response => response.json())
             .then(data => {
                 const isPrivate = data.isPrivate;
